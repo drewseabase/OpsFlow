@@ -2,38 +2,38 @@ generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
+datasource db{
   provider = "postgresql"
-  // Remove the url line - it's now configured in prisma.config.ts
+  url = env("DATABASE_URL")
 }
 
-model User {
-  id            String    @id @default(cuid())
-  email         String    @unique
-  name          String?
-  role          String    @default("employee")
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  requests      Request[]
-  
+model User{
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  role      String   @default("employee")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  requests  Request[]
+
   @@map("users")
 }
 
-model Request {
-  id              String    @id @default(cuid())
-  itemName        String
-  cost            Float
-  productLink     String?
-  reason          String
-  status          String    @default("IN_PROGRESS")
-  currentStep     Int       @default(1)
-  attachmentUrl   String?
-  attachmentName  String?
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
-  
-  userId          String
-  user            User      @relation(fields: [userId], references: [id])
-  
+model Request{
+  id             String    @id @default(cuid())
+  itemName       String 
+  cost           Float
+  productLink    String?
+  reason         String
+  status         String    @default("IN_PROGRESS")
+  currentStep    Int       @default(1)
+  attachmentUrl  String?
+  attachmentName String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  userId         String
+  user           User    @relation(fields: [userId], references: [id])
+
   @@map("requests")
 }
