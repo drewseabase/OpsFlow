@@ -13,7 +13,7 @@
     "db:migrate": "prisma migrate dev"
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.7.0",
+    "@clerk/nextjs": "^6.36.7",
     "@prisma/client": "^6.0.1",
     "next": "^15.5.9",
     "react": "^19.0.0",

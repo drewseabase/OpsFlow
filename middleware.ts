@@ -1,8 +1,7 @@
-import { authMiddleware } from '@clerk/nextjs/server';
+import { clerkMiddleware } from '@clerk/nextjs/server';
 
-export default authMiddleware({
-  publicRoutes: ['/', '/sign-in(.*)', '/sign-up(.*)'],
-});
+// This simple version works better with Vercel Edge
+export default clerkMiddleware();
 
 export const config = {
   matcher: [
