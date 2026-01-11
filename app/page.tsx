@@ -1,11 +1,11 @@
 import { SignedIn, SignedOut } from '@clerk/nextjs';
-import { NavBar } from '@/components/Navbar';
+import { Navbar } from '@/components/Navbar';
 import Link from 'next/link';
 
 export default function HomePage() {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
