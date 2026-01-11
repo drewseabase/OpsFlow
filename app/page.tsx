@@ -38,7 +38,7 @@ export default function HomePage() {
                   href="/sign-in"
                   className="inline-block bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-50 transition"
                 >
-                  Sign In
+                  Sign Up
                 </Link>
               </div>
             </SignedOut>
